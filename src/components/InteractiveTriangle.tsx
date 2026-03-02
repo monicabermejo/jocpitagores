@@ -2,17 +2,18 @@ import { useState, useEffect, useRef } from 'react';
 import type { Language, EscapeProblem } from '../types';
 
 // Image for each problem (files live in public/imatges/)
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const PROBLEM_IMAGE: Record<string, string> = {
-  r1p1:  '/imatges/problema-1.png',
-  r1p2:  '/imatges/problema-2.png',
-  r1p3:  '/imatges/problema-3.png',
-  r2p1:  '/imatges/problema-4.png',
-  r2p2:  '/imatges/problema-5.png',
-  r2p3:  '/imatges/problema-6.png',
-  r3p1:  '/imatges/problema-7.png',
-  r3p2:  '/imatges/problema-8.png',
-  r3p3:  '/imatges/problema-9.png',
-  r3p4:  '/imatges/problema-10.png',
+  r1p1:  `${base}/imatges/problema-1.png`,
+  r1p2:  `${base}/imatges/problema-2.png`,
+  r1p3:  `${base}/imatges/problema-3.png`,
+  r2p1:  `${base}/imatges/problema-4.png`,
+  r2p2:  `${base}/imatges/problema-5.png`,
+  r2p3:  `${base}/imatges/problema-6.png`,
+  r3p1:  `${base}/imatges/problema-7.png`,
+  r3p2:  `${base}/imatges/problema-8.png`,
+  r3p3:  `${base}/imatges/problema-9.png`,
+  r3p4:  `${base}/imatges/problema-10.png`,
 };
 
 interface Props {
