@@ -131,8 +131,8 @@ export default function RoomScene({
                      bg-gradient-to-b ${room.bgGradient}`}>
 
       {/* Ambiance torches */}
-      <div className="fixed top-14 left-2 text-2xl animate-torch-flicker pointer-events-none">🔥</div>
-      <div className="fixed top-14 right-2 text-2xl animate-torch-flicker pointer-events-none"
+      <div className="fixed top-24 left-2 text-2xl animate-torch-flicker pointer-events-none">🔥</div>
+      <div className="fixed top-24 right-2 text-2xl animate-torch-flicker pointer-events-none"
            style={{ animationDelay: '0.7s' }}>🔥</div>
 
       {/* History toggle — shown when at least 1 problem solved and room not done */}

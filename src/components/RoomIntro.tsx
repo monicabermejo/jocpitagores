@@ -16,8 +16,8 @@ export default function RoomIntro({ lang, room, roomIndex, onStart }: Props) {
 
       {/* Torches */}
       <div className="fixed top-0 left-0 w-full pointer-events-none">
-        <div className="absolute top-16 left-4 text-3xl animate-torch-flicker">🔥</div>
-        <div className="absolute top-16 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.8s' }}>🔥</div>
+        <div className="absolute top-24 left-4 text-3xl animate-torch-flicker">🔥</div>
+        <div className="absolute top-24 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.8s' }}>🔥</div>
       </div>
 
       <motion.div

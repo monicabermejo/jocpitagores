@@ -41,8 +41,8 @@ export default function EmailGate({ lang, onSuccess, onLangToggle }: Props) {
                     bg-gradient-to-b from-egypt-darker via-stone-900 to-egypt-darker">
       {/* Decorative torches */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-4  text-4xl animate-torch-flicker">🔥</div>
-        <div className="absolute top-0 right-4 text-4xl animate-torch-flicker" style={{ animationDelay: '0.7s' }}>🔥</div>
+        <div className="absolute top-24 left-4  text-4xl animate-torch-flicker">🔥</div>
+        <div className="absolute top-24 right-4 text-4xl animate-torch-flicker" style={{ animationDelay: '0.7s' }}>🔥</div>
       </div>
 
       <div className="absolute top-4 right-4 z-10">

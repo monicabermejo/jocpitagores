@@ -16,8 +16,8 @@ export default function WelcomeScreen({ lang, studentName, totalProblems, onStar
 
       {/* Torches */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-16 left-4 text-3xl animate-torch-flicker">🔥</div>
-        <div className="absolute top-16 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.9s' }}>🔥</div>
+        <div className="absolute top-24 left-4 text-3xl animate-torch-flicker">🔥</div>
+        <div className="absolute top-24 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.9s' }}>🔥</div>
         <div className="absolute bottom-0 left-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.4s' }}>🔥</div>
         <div className="absolute bottom-0 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '1.2s' }}>🔥</div>
       </div>
