@@ -14,7 +14,7 @@ function HistoryPanel({ room, chainValues, lang, accentColor }: {
 }) {
   if (chainValues.length === 0) return null;
   return (
-    <div className="w-full max-w-lg mb-3">
+    <div className="w-full max-w-2xl mb-3">
       <div className="bg-stone-900/70 border border-stone-700/50 rounded-xl px-4 py-3 text-xs space-y-2">
         <p className="text-stone-400 font-semibold uppercase tracking-wide text-[10px] mb-1">
           {lang === 'ca' ? "📋 Respostes anteriors d'aquesta sala" : "📋 Respuestas anteriores de esta sala"}
@@ -137,7 +137,7 @@ export default function RoomScene({
 
       {/* History toggle — shown when at least 1 problem solved and room not done */}
       {problemIndex > 0 && !roomDone && (
-        <div className="w-full max-w-lg mb-1">
+        <div className="w-full max-w-2xl mb-1">
           <button
             onClick={() => setShowHistory(h => !h)}
             className="text-xs text-stone-400 hover:text-sand-300 transition-colors flex items-center gap-1"
@@ -185,7 +185,7 @@ export default function RoomScene({
             key="room-done"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-full max-w-lg text-center"
+            className="w-full max-w-2xl text-center"
           >
             {/* Celebration */}
             <motion.div

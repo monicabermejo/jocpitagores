@@ -79,7 +79,7 @@ export default function ProblemPanel({
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -40 }}
       transition={{ duration: 0.4 }}
-      className="w-full max-w-lg"
+      className="w-full max-w-2xl"
       onKeyDown={(e) => { if (e.key === 'Enter' && feedback === 'idle') check(); }}
     >
       {/* Problem counter dots */}

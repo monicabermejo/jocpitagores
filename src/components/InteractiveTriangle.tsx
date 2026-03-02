@@ -101,7 +101,7 @@ export default function InteractiveTriangle({
           src={imageUrl}
           alt={`Triangle problema ${problem.id}`}
           className="max-w-full rounded-xl"
-          style={{ maxHeight: 220 }}
+          style={{ maxHeight: 340 }}
         />
       )}
 
