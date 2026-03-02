@@ -146,7 +146,7 @@ export default function ProblemPanel({
           </p>
         </div>
 
-        {/* Interactive Triangle — student fills in all three sides */}
+        {/* Interactive Triangle — 3-col layout: fields | image | answer+actions */}
         <div className="px-5 pb-4">
           <InteractiveTriangle
             problem={problem}
@@ -155,61 +155,68 @@ export default function ProblemPanel({
             onAnswerChange={handleAnswerChange}
             resetKey={resetKey}
             locked={feedback === 'correct'}
-          />
-        </div>
+          >
+            {/* Feedback */}
+            <AnimatePresence mode="wait">
+              {feedback === 'correct' && (
+                <motion.div
+                  key="correct"
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="bg-green-900/40 border border-green-600/40 rounded-lg px-3 py-2
+                             text-green-300 text-sm flex items-center gap-2"
+                >
+                  <span>✅</span> {UI.correctMsg[lang]}
+                </motion.div>
+              )}
+              {feedback === 'wrong' && (
+                <motion.div
+                  key="wrong"
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="bg-red-900/40 border border-red-700/40 rounded-lg px-3 py-2
+                             text-red-300 text-sm flex items-center gap-2"
+                >
+                  <span>❌</span> {UI.wrongMsg[lang]}
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-        {/* Feedback */}
-        <div className="px-5 pb-2">
-          <AnimatePresence mode="wait">
-            {feedback === 'correct' && (
-              <motion.div
-                key="correct"
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="bg-green-900/40 border border-green-600/40 rounded-lg px-3 py-2 mb-3
-                           text-green-300 text-sm flex items-center gap-2"
-              >
-                <span>✅</span> {UI.correctMsg[lang]}
-              </motion.div>
+            {/* Actions */}
+            {feedback !== 'correct' && (
+              <div className="flex gap-2">
+                <button
+                  onClick={check}
+                  disabled={!answerValue.trim() || feedback !== 'idle'}
+                  className="flex-1 py-2.5 rounded-xl font-semibold text-sm text-egypt-dark
+                             shadow-md hover:brightness-110 active:brightness-90
+                             disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                  style={{ background: `linear-gradient(135deg, ${accentColor}, #c9a227)` }}
+                >
+                  {UI.checkBtn[lang]}
+                </button>
+                <button
+                  onClick={() => setShowHint(h => !h)}
+                  className="px-3 py-2 rounded-xl text-sm border border-stone-600 text-sand-400
+                             hover:bg-stone-800 hover:text-sand-200 transition-colors"
+                >
+                  {showHint ? UI.hideHintBtn[lang] : UI.hintBtn[lang]}
+                </button>
+              </div>
             )}
-            {feedback === 'wrong' && (
-              <motion.div
-                key="wrong"
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="bg-red-900/40 border border-red-700/40 rounded-lg px-3 py-2 mb-3
-                           text-red-300 text-sm flex items-center gap-2"
-              >
-                <span>❌</span> {UI.wrongMsg[lang]}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
 
-        {/* Actions */}
-        {feedback !== 'correct' && (
-          <div className="px-5 pb-4 flex gap-2">
-            <button
-              onClick={check}
-              disabled={!answerValue.trim() || feedback !== 'idle'}
-              className="flex-1 py-2.5 rounded-xl font-semibold text-sm text-egypt-dark
-                         shadow-md hover:brightness-110 active:brightness-90
-                         disabled:opacity-40 disabled:cursor-not-allowed transition-all"
-              style={{ background: `linear-gradient(135deg, ${accentColor}, #c9a227)` }}
-            >
-              {UI.checkBtn[lang]}
-            </button>
-            <button
-              onClick={() => setShowHint(h => !h)}
-              className="px-3 py-2 rounded-xl text-sm border border-stone-600 text-sand-400
-                         hover:bg-stone-800 hover:text-sand-200 transition-colors"
-            >
-              {showHint ? UI.hideHintBtn[lang] : UI.hintBtn[lang]}
-            </button>
-          </div>
-        )}
+            {/* Attempt counter */}
+            {attempts > 0 && feedback !== 'correct' && (
+              <p className="text-stone-600 text-[11px] text-center">
+                {lang === 'ca'
+                  ? `${attempts} intent${attempts !== 1 ? 's' : ''}`
+                  : `${attempts} intento${attempts !== 1 ? 's' : ''}`}
+              </p>
+            )}
+          </InteractiveTriangle>
+        </div>
 
         {/* Hint */}
         <AnimatePresence>
@@ -228,15 +235,6 @@ export default function ProblemPanel({
             </motion.div>
           )}
         </AnimatePresence>
-
-        {/* Attempt counter */}
-        {attempts > 0 && feedback !== 'correct' && (
-          <p className="text-stone-600 text-[11px] pb-3 text-center">
-            {lang === 'ca'
-              ? `${attempts} intent${attempts !== 1 ? 's' : ''}`
-              : `${attempts} intento${attempts !== 1 ? 's' : ''}`}
-          </p>
-        )}
       </div>
     </motion.div>
   );

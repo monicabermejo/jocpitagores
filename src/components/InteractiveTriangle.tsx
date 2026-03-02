@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
 import type { Language, EscapeProblem } from '../types';
 
 // Image for each problem (files live in public/imatges/)
@@ -26,6 +27,8 @@ interface Props {
   resetKey: number;
   /** Whether the answer has been accepted (locks fields) */
   locked: boolean;
+  /** Extra content rendered below the answer box (e.g. check button) */
+  children?: ReactNode;
 }
 
 type SideType = 'known' | 'chain' | 'unknown';
@@ -52,6 +55,7 @@ export default function InteractiveTriangle({
   onAnswerChange,
   resetKey,
   locked,
+  children,
 }: Props) {
   const { triangle } = problem;
 
@@ -93,67 +97,56 @@ export default function InteractiveTriangle({
   const imageUrl = PROBLEM_IMAGE[problem.id];
 
   return (
-    <div className="w-full flex flex-col items-center gap-3">
+    <div className="w-full grid gap-4 items-center"
+         style={{ gridTemplateColumns: 'minmax(90px,1fr) auto minmax(160px,1.5fr)' }}>
 
-      {/* ── Problem image ── */}
-      {imageUrl && (
-        <img
-          src={imageUrl}
-          alt={`Triangle problema ${problem.id}`}
-          className="max-w-full rounded-xl"
-          style={{ maxHeight: 500 }}
-        />
-      )}
-
-
-
-      {/* ── Input fields ── */}
-      <div className="w-full grid grid-cols-3 gap-2 text-xs">
-        <SideField
-          label="h"
-          type={hypConfig.type}
-          value={hypInput}
-          onChange={v => handleChange('hyp', v)}
-          locked={locked}
-        />
-        <SideField
-          label="c₁"
-          type={leg1Config.type}
-          value={leg1Input}
-          onChange={v => handleChange('leg1', v)}
-          locked={locked}
-        />
-        <SideField
-          label="c₂"
-          type={leg2Config.type}
-          value={leg2Input}
-          onChange={v => handleChange('leg2', v)}
-          locked={locked}
-        />
+      {/* ── LEFT: annotation fields ── */}
+      <div className="flex flex-col gap-3 justify-center">
+        <SideField label="h"  type={hypConfig.type}  value={hypInput}  onChange={v => handleChange('hyp',  v)} locked={locked} />
+        <SideField label="c₁" type={leg1Config.type} value={leg1Input} onChange={v => handleChange('leg1', v)} locked={locked} />
+        <SideField label="c₂" type={leg2Config.type} value={leg2Input} onChange={v => handleChange('leg2', v)} locked={locked} />
       </div>
 
-      {/* ── Final answer box ── */}
-      <div className="w-full flex items-center gap-2 pt-1">
-        <span className="text-xs text-sand-400 shrink-0">
-          {lang === 'ca' ? 'Resposta:' : 'Respuesta:'}
-        </span>
-        <input
-          ref={answerRef}
-          type="text"
-          inputMode="decimal"
-          value={answerInput}
-          disabled={locked}
-          onChange={e => handleAnswerInput(e.target.value)}
-          placeholder="···"
-          className="flex-1 rounded-lg px-3 py-1.5 text-sm text-center
-                     bg-stone-800 placeholder-stone-600 text-sand-100
-                     focus:outline-none transition-colors disabled:opacity-60"
-          style={{ border: '1.5px solid #e67c1b' }}
-        />
-        {problem.unit ? (
-          <span className="text-xs text-stone-400 shrink-0">{problem.unit}</span>
-        ) : null}
+      {/* ── CENTER: problem image ── */}
+      <div className="flex justify-center">
+        {imageUrl && (
+          <img
+            src={imageUrl}
+            alt={`Triangle problema ${problem.id}`}
+            className="max-w-full rounded-xl"
+            style={{ maxHeight: 420 }}
+          />
+        )}
       </div>
+
+      {/* ── RIGHT: answer box + actions slot ── */}
+      <div className="flex flex-col gap-3 justify-center self-stretch">
+        <div className="flex flex-col gap-1.5">
+          <span className="text-xs text-sand-400">
+            {lang === 'ca' ? 'Resposta:' : 'Respuesta:'}
+          </span>
+          <div className="flex items-center gap-1.5">
+            <input
+              ref={answerRef}
+              type="text"
+              inputMode="decimal"
+              value={answerInput}
+              disabled={locked}
+              onChange={e => handleAnswerInput(e.target.value)}
+              placeholder="···"
+              className="flex-1 rounded-lg px-3 py-1.5 text-sm text-center
+                         bg-stone-800 placeholder-stone-600 text-sand-100
+                         focus:outline-none transition-colors disabled:opacity-60"
+              style={{ border: '1.5px solid #e67c1b' }}
+            />
+            {problem.unit ? (
+              <span className="text-xs text-stone-400 shrink-0">{problem.unit}</span>
+            ) : null}
+          </div>
+        </div>
+        {children}
+      </div>
+
     </div>
   );
 }
