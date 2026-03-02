@@ -16,8 +16,8 @@ export default function WelcomeScreen({ lang, studentName, totalProblems, onStar
 
       {/* Torches */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-0 left-4 text-3xl animate-torch-flicker">🔥</div>
-        <div className="absolute top-0 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.9s' }}>🔥</div>
+        <div className="absolute top-16 left-4 text-3xl animate-torch-flicker">🔥</div>
+        <div className="absolute top-16 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.9s' }}>🔥</div>
         <div className="absolute bottom-0 left-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.4s' }}>🔥</div>
         <div className="absolute bottom-0 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '1.2s' }}>🔥</div>
       </div>
@@ -26,7 +26,7 @@ export default function WelcomeScreen({ lang, studentName, totalProblems, onStar
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-lg relative z-10"
+        className="w-full max-w-4xl relative z-10"
       >
         {/* Warning banner */}
         <div className="text-center mb-6">

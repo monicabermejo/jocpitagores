@@ -16,15 +16,15 @@ export default function RoomIntro({ lang, room, roomIndex, onStart }: Props) {
 
       {/* Torches */}
       <div className="fixed top-0 left-0 w-full pointer-events-none">
-        <div className="absolute top-2 left-4 text-3xl animate-torch-flicker">🔥</div>
-        <div className="absolute top-2 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.8s' }}>🔥</div>
+        <div className="absolute top-16 left-4 text-3xl animate-torch-flicker">🔥</div>
+        <div className="absolute top-16 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.8s' }}>🔥</div>
       </div>
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-md text-center relative z-10"
+        className="w-full max-w-4xl text-center relative z-10"
       >
         {/* Room number badge */}
         <div className="inline-flex items-center gap-2 bg-stone-800/70 border border-stone-600/50
