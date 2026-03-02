@@ -130,7 +130,7 @@ export default function RoomScene({
     <div className={`min-h-screen w-full flex flex-col items-center px-4 py-6 pt-20
                      bg-gradient-to-b ${room.bgGradient}`}>
 
-      {/* History toggle — shown when at least 1 problem solved and room not done */}}
+      {/* History toggle — shown when at least 1 problem solved and room not done */}
       {problemIndex > 0 && !roomDone && (
         <div className="w-full mb-1">
           <button
