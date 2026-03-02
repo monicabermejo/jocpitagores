@@ -14,12 +14,6 @@ export default function RoomIntro({ lang, room, roomIndex, onStart }: Props) {
     <div className={`min-h-screen w-full flex flex-col items-center justify-center px-4
                      bg-gradient-to-b ${room.bgGradient}`}>
 
-      {/* Torches */}
-      <div className="fixed top-0 left-0 w-full pointer-events-none">
-        <div className="absolute top-24 left-4 text-3xl animate-torch-flicker">🔥</div>
-        <div className="absolute top-24 right-4 text-3xl animate-torch-flicker" style={{ animationDelay: '0.8s' }}>🔥</div>
-      </div>
-
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
