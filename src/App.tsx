@@ -180,6 +180,11 @@ export default function App() {
           />
         )}
       </main>
+
+      {/* ── Author credit ── */}
+      <p className="fixed bottom-1 right-2 text-[10px] italic text-stone-600 pointer-events-none select-none z-40">
+        © Mónica Bermejo Abellán
+      </p>
     </div>
   );
 }
