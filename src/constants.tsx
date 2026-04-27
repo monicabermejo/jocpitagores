@@ -152,12 +152,12 @@ export const ROOMS: EscapeRoom[] = [
         answer: 10,
         unit: 'cúbits',
         narrative: {
-          ca: 'El tercer mecanisme! La porta del passadís té un marc triangular. La diagonal del marc té exactament la mateixa longitud que has calculat al problema anterior, i la seva base és de 24 cúbits. Has de trobar l\'alçada de la porta per calibrar el pany.',
-          es: 'El tercer mecanismo. El marco de la puerta del pasillo tiene forma triangular. La diagonal del marco tiene exactamente la misma longitud que has calculado en el problema anterior, y su base es de 24 cúbits. Tienes que encontrar la altura de la puerta para calibrar la cerradura.',
+          ca: 'El tercer mecanisme! La porta del passadís té un marc triangular. La diagonal del marc té exactament la mateixa longitud que has calculat al problema anterior, i la seva alçada és de 24 cúbits. Has de trobar l\'amplada de la porta per calibrar el pany.',
+          es: 'El tercer mecanismo. El marco de la puerta del pasillo tiene forma triangular. La diagonal del marco tiene exactamente la misma longitud que has calculado en el problema anterior, y su altura es de 24 cúbits. Tienes que encontrar el ancho de la puerta para calibrar la cerradura.',
         },
         question: {
-          ca: 'Quina és l\'alçada de la porta?',
-          es: '¿Cuál es la altura de la puerta?',
+          ca: 'Quina és l\'amplada de la porta?',
+          es: '¿Cuál es el ancho de la puerta?',
         },
         hint: {
           ca: 'Aquesta vegada coneixes la hipotenusa i un catet. Recorda que pots aïllar el catet desconegut: catet² = hipotenusa² − catet conegut².',
@@ -310,16 +310,16 @@ export const ROOMS: EscapeRoom[] = [
         answer: 24,
         unit: 'cúbits',
         narrative: {
-          ca: 'El tercer mecanisme! Una vareta de metall, la longitud de la qual coincideix amb el resultat del problema anterior, surt des d\'un punt a 7 cúbits del terra i arriba directament al bany del faraó. Quina és l\'alçada vertical a la qual arriba la vareta?',
-          es: 'El tercer mecanismo. Una varilla de metal, cuya longitud coincide con el resultado del problema anterior, sale desde un punto a 7 cúbits del suelo y llega directamente al baño del faraón. ¿A qué altura vertical llega la varilla?',
+          ca: 'El tercer mecanisme! Una vareta de metall, la longitud de la qual coincideix amb el resultat del problema anterior, recolza contra el mur de la cambra. El punt on toca el mur és a 7 cúbits d\'alçada. Quina és la distància horitzontal des de la base de la vareta fins al mur?',
+          es: 'El tercer mecanismo. Una varilla de metal, cuya longitud coincide con el resultado del problema anterior, se apoya contra el muro de la cámara. El punto donde toca el muro está a 7 cúbits de altura. ¿Cuál es la distancia horizontal desde la base de la varilla hasta el muro?',
         },
         question: {
-          ca: 'Quina és l\'alçada vertical on arriba la vareta?',
-          es: '¿A qué altura vertical llega la varilla?',
+          ca: 'Quina és la distància horitzontal de la base de la vareta al mur?',
+          es: '¿Cuál es la distancia horizontal desde la base de la varilla hasta el muro?',
         },
         hint: {
-          ca: 'Aquí la hipotenusa és la longitud del problema anterior i un catet és a la imatge. Aïlla el catet que et falta: catet² = hipotenusa² − catet conegut².',
-          es: 'Aquí la hipotenusa es la longitud del problema anterior y un cateto está en la imagen. Despeja el cateto que te falta: cateto² = hipotenusa² − cateto conocido².',
+          ca: 'Aquí la hipotenusa és la longitud del problema anterior i el catet vertical (7) és a la imatge. Aïlla el catet horitzontal: catet² = hipotenusa² − catet conegut².',
+          es: 'Aquí la hipotenusa es la longitud del problema anterior y el cateto vertical (7) está en la imagen. Despeja el cateto horizontal: cateto² = hipotenusa² − cateto conocido².',
         },
         triangle: { leg1: null, leg2: 7, hyp: 'chain' },
       },
