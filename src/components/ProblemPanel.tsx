@@ -55,7 +55,7 @@ export default function ProblemPanel({
   const check = () => {
     const val = parseFloat(answerRef.current.trim().replace(',', '.'));
     if (isNaN(val)) return;
-    const isOk = Math.abs(val - problem.answer) < 0.1;
+    const isOk = Math.abs(val - problem.answer) < 0.15;
     if (isOk) {
       setFeedback('correct');
       setTimeout(() => onCorrect(problem.answer), 1200);
