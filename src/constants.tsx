@@ -118,8 +118,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'En el centro de la sala hay una rampa de piedra sagrada. El escriba principal grabó sus medidas en la pared: base 6 cúbits, altura 8 cúbits. Necesitas saber la longitud de la rampa para activar el primer mecanismo.',
         },
         question: {
-          ca: 'Quina és la longitud de la rampa (hipotenusa)?',
-          es: '¿Cuál es la longitud de la rampa (hipotenusa)?',
+          ca: 'Quina és la longitud de la rampa?',
+          es: '¿Cuál es la longitud de la rampa?',
         },
         hint: {
           ca: 'Identifica els dos costats que formen l\'angle recte a la imatge. Eleva\'ls al quadrat, suma\'ls i extreu l\'arrel quadrada del resultat.',
@@ -156,8 +156,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'El tercer mecanismo. El marco de la puerta del pasillo tiene forma triangular. La diagonal del marco tiene exactamente la misma longitud que has calculado en el problema anterior, y su base es de 24 cúbits. Tienes que encontrar la altura de la puerta para calibrar la cerradura.',
         },
         question: {
-          ca: 'Quina és l\'alçada de la porta (catet vertical)?',
-          es: '¿Cuál es la altura de la puerta (cateto vertical)?',
+          ca: 'Quina és l\'alçada de la porta?',
+          es: '¿Cuál es la altura de la puerta?',
         },
         hint: {
           ca: 'Aquesta vegada coneixes la hipotenusa i un catet. Recorda que pots aïllar el catet desconegut: catet² = hipotenusa² − catet conegut².',
@@ -197,8 +197,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'La columna caída va desde un punto del suelo hasta un punto de la pared. Mides las distancias: el punto del suelo está a 5 cúbits del muro y la pared donde toca está a 12 cúbits de altura. Necesitas la longitud exacta de la columna caída.',
         },
         question: {
-          ca: 'Quina és la longitud de la columna caiguda (hipotenusa)?',
-          es: '¿Cuál es la longitud de la columna caída (hipotenusa)?',
+          ca: 'Quina és la longitud de la columna caiguda?',
+          es: '¿Cuál es la longitud de la columna caída?',
         },
         hint: {
           ca: 'La columna és la hipotenusa. Llegeix els dos catets a la imatge, aplica el teorema de Pitàgores i no oblidis extreure l\'arrel al final.',
@@ -216,8 +216,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'Detrás de la columna hay un pasaje secreto. Su entrada diagonal tiene exactamente la misma longitud que la columna que acabas de medir. El ancho del pasaje es de 5 cúbits. Necesitas saber la altura para saber si puedes pasar.',
         },
         question: {
-          ca: 'Quina és l\'alçada del passatge secret (catet vertical)?',
-          es: '¿Cuál es la altura del pasaje secreto (cateto vertical)?',
+          ca: 'Quina és l\'alçada del passatge secret?',
+          es: '¿Cuál es la altura del pasaje secreto?',
         },
         hint: {
           ca: 'Coneixes la diagonal i un dels costats. Per trobar l\'altre catet, recorda que el quadrat de la hipotenusa és igual a la suma dels quadrats dels dos catets: pots aïllar el que et falta.',
@@ -235,8 +235,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'Al fondo del pasaje hay un puente de piedra. Los soportes verticales tienen la misma altura que has calculado en el problema anterior. El puente cruza 16 cúbits en horizontal. El activador necesita saber la longitud de la viga diagonal de soporte.',
         },
         question: {
-          ca: 'Quina és la longitud de la biga diagonal (hipotenusa)?',
-          es: '¿Cuál es la longitud de la viga diagonal (hipotenusa)?',
+          ca: 'Quina és la longitud de la biga diagonal?',
+          es: '¿Cuál es la longitud de la viga diagonal?',
         },
         hint: {
           ca: 'La biga diagonal és la hipotenusa. Els dos costats de l\'angle recte ja els tens: un prové del problema anterior i l\'altre apareix a la imatge.',
@@ -276,8 +276,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'El sarcófago está sobre un pedestal elevado. Una escalera de madera lleva hasta él. La escalera empieza a 9 cúbits de la base del pedestal y el pedestal tiene 12 cúbits de altura. Necesitas la longitud de la escalera para el primer mecanismo.',
         },
         question: {
-          ca: 'Quina és la longitud de l\'escala (hipotenusa)?',
-          es: '¿Cuál es la longitud de la escalera (hipotenusa)?',
+          ca: 'Quina és la longitud de l\'escala?',
+          es: '¿Cuál es la longitud de la escalera?',
         },
         hint: {
           ca: 'L\'escala és la hipotenusa del triangle. Localitza els dos catets a la imatge, aplica a²+b²=c² i recorda l\'arrel quadrada al final.',
@@ -295,8 +295,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'El segundo mecanismo está al lado del sarcófago. Una rampa ceremonial sube hasta una altura igual a la longitud de la escalera que has calculado en el paso anterior. La rampa cubre 20 cúbits en horizontal. ¿Cuál es la longitud total de la rampa?',
         },
         question: {
-          ca: 'Quina és la longitud de la rampa cerimonial (hipotenusa)?',
-          es: '¿Cuál es la longitud de la rampa ceremonial (hipotenusa)?',
+          ca: 'Quina és la longitud de la rampa cerimonial?',
+          es: '¿Cuál es la longitud de la rampa ceremonial?',
         },
         hint: {
           ca: 'Tens els dos catets: un te\'l dona el problema anterior i l\'altre és a la imatge. Aplica Pitàgores per obtenir la longitud de la rampa.',
@@ -314,8 +314,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'El tercer mecanismo. Una varilla de metal, cuya longitud coincide con el resultado del problema anterior, sale desde un punto a 7 cúbits del suelo y llega directamente al baño del faraón. ¿A qué altura vertical llega la varilla?',
         },
         question: {
-          ca: 'Quina és l\'alçada vertical on arriba la vareta (catet vertical)?',
-          es: '¿A qué altura vertical llega la varilla (cateto vertical)?',
+          ca: 'Quina és l\'alçada vertical on arriba la vareta?',
+          es: '¿A qué altura vertical llega la varilla?',
         },
         hint: {
           ca: 'Aquí la hipotenusa és la longitud del problema anterior i un catet és a la imatge. Aïlla el catet que et falta: catet² = hipotenusa² − catet conegut².',
@@ -333,8 +333,8 @@ export const ROOMS: EscapeRoom[] = [
           es: 'El último mecanismo. La barra horizontal del cerrojo tiene una longitud igual al valor que acabas de obtener en el problema anterior. La barra vertical mide 10 cúbits. Gira la llave en la diagonal exacta para abrir la puerta de la pirámide para siempre.',
         },
         question: {
-          ca: 'Quina és la longitud de la diagonal del pany (hipotenusa)?',
-          es: '¿Cuál es la longitud de la diagonal del cerrojo (hipotenusa)?',
+          ca: 'Quina és la longitud de la diagonal del pany?',
+          es: '¿Cuál es la longitud de la diagonal del cerrojo?',
         },
         hint: {
           ca: 'La diagonal del pany és la hipotenusa. Tens els dos costats de l\'angle recte: un prové del problema anterior i l\'altre és a la imatge. Ara aplica el teorema.',
